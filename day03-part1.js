@@ -21,7 +21,6 @@ module.exports = s => {
     } else if (diff < a * 2 - 2) {
         pos[0] = -b;
         pos[1] += (a + 1) - diff;
-        console.log(a, diff);
     } else if (diff < a * 3 - 2) {
         pos[0] += (a * 2 - 2) - diff;
         pos[1] = b;
