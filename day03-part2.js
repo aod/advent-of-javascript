@@ -10,22 +10,16 @@ module.exports = s => {
     let grid = [
         new Score(0, 0, 1)
     ];
-
-    let highest = grid[grid.length - 1];
-
     let square = 1;
-    let nextSquare = square + 2;
-
     let direction = 'right';
 
     do {
         if (grid.length >= square ** 2) {
-            square = nextSquare;
-            nextSquare = square + 2;
+            square += 2;
         }
         const maxLength = Math.floor(square / 2);
 
-        const prev = grid[grid.length - 1];
+        const prev = grid.slice(-1)[0];
         let current = new Score(null, null, null);
 
         switch (direction) {
@@ -63,9 +57,10 @@ module.exports = s => {
                score.x >= current.x - 1 && score.x <= current.x + 1
             && score.y >= current.y - 1 && score.y <= current.y + 1
         ).reduce((acc, score) => acc + score.value, 0);
+        grid.push(current);
 
-        highest = grid[grid.push(current) - 1];
-    } while (s >= highest.value)
+        highest = current;
+    } while (s >= highest.value);
 
-    return grid[grid.length - 1].value;
+    return highest.value;
 }
