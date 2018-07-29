@@ -1,4 +1,5 @@
 const passphrase = require('./day04-part1');
+const passphrase2 = require('./day04-part2');
 
 // https://adventofcode.com/2017/day/4
 describe('day 4: High-Entropy Passphrases', () => {
@@ -7,6 +8,15 @@ describe('day 4: High-Entropy Passphrases', () => {
             expect(passphrase('aa bb cc dd ee')).toBe(1);
             expect(passphrase('aa bb cc dd aa')).toBe(0);
             expect(passphrase('aa bb cc dd aaa')).toBe(1);
+        });
+    });
+    describe('part 2', () => {
+        test('test input', () => {
+            expect(passphrase2('abcde fghij')).toBe(1);
+            expect(passphrase2('abcde xyz ecdab')).toBe(0);
+            expect(passphrase2('a ab abc abd abf abj')).toBe(1);
+            expect(passphrase2('iiii oiii ooii oooi oooo')).toBe(1);
+            expect(passphrase2('oiii ioii iioi iiio')).toBe(0);
         });
     });
 });
