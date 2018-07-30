@@ -31,9 +31,7 @@ const file = path.resolve(__dirname, `${argv.year}/day/${argv.day}/part${argv.pa
 
 if (fs.existsSync(file)) {
     const puzzle = require(file);
-    let input = argv.input;
-
-    input = argv.input
+    let input = argv.input
         ? argv.input
         : fs.readFileSync(
             path.resolve(__dirname, `${argv.year}/day/${argv.day}/input`),
