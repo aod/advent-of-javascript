@@ -7,5 +7,5 @@ module.exports = input => {
         area.distribute();
     }
 
-    return area.loopDetected;
+    return area.loopDetectedCycles;
 }

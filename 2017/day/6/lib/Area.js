@@ -4,7 +4,7 @@ module.exports = class Area {
         this.steps = 0;
         this.history = {};
         this.loopDetected = undefined;
-
+        this.loopDetectedCycles = undefined;
         this.history[this.memoryBanks] = true;
     }
 
@@ -28,9 +28,10 @@ module.exports = class Area {
 
         if (this.history.hasOwnProperty(this.memoryBanks)) {
             this.loopDetected = this.steps;
+            this.loopDetectedCycles = this.steps - this.history[this.memoryBanks];
         }
 
-        this.history[this.memoryBanks] = true;
+        this.history[this.memoryBanks] = this.steps;
     }
 
     get highest() {
