@@ -1,22 +1,18 @@
-const spiralMemory = require('./day/3/part1');
-const spiralMemory2 = require('./day/3/part2');
+const part1 = require('./day/3/part1');
+const part2 = require('./day/3/part2');
 
 describe('day 3: Spiral Memory', () => {
-    describe('part 1', () => {
-        test('test input', () => {
-            expect(spiralMemory(1)).toBe(0);
-            expect(spiralMemory(12)).toBe(3);
-            expect(spiralMemory(23)).toBe(2);
-            expect(spiralMemory(1024)).toBe(31);
-        });
+    test('part 1', () => {
+        expect(part1(1)).toBe(0);
+        expect(part1(12)).toBe(3);
+        expect(part1(23)).toBe(2);
+        expect(part1(1024)).toBe(31);
     });
 
-    describe('part 2', () => {
-        test('test input', () => {
-            expect(spiralMemory2(5)).toBe(10);
-            expect(spiralMemory2(10)).toBe(11);
-            expect(spiralMemory2(25)).toBe(26);
-            expect(spiralMemory2(747)).toBe(806);
-        });
+    test('part 2', () => {
+        expect(part2(5)).toBe(10);
+        expect(part2(10)).toBe(11);
+        expect(part2(25)).toBe(26);
+        expect(part2(747)).toBe(806);
     });
 });
