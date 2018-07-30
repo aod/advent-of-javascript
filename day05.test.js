@@ -1,7 +1,7 @@
 const trampolines = require('./day05-part1');
 const trampolines2 = require('./day05-part2');
 
-// https://adventofcode.com/2017/day/4
+// https://adventofcode.com/2017/day/5
 describe('day 5: A Maze of Twisty Trampolines, All Alike', () => {
     const testInput = [0, 3, 0, 1, -3].join('\n');
     describe('part 1', () => {
