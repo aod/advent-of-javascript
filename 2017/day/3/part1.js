@@ -1,20 +1,20 @@
-module.exports = s => {
-    s = Number(s);
+module.exports = input => {
+    input = Number(input);
 
-    if (s === 1) {
+    if (input === 1) {
         return 0;
     }
 
     let a = 1;
     do {
         a += 2;
-    } while (a ** 2 < s)
+    } while (a ** 2 < input)
     let b = Math.floor(a / 2);
 
     let num = a ** 2;
     let pos = [b, -b];
 
-    const diff = num - s;
+    const diff = num - input;
 
     if (diff < a) {
         pos[0] -= diff;

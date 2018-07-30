@@ -1,7 +1,7 @@
-module.exports = s => {
+module.exports = input => {
     let result = 0;
 
-    const parsed = s.split(/\r?\n/)
+    const parsed = input.split(/\r?\n/)
         .map(row => new Int32Array(
             row.split(/[ \t]+/).map(Number)
         ));

@@ -1,5 +1,5 @@
-module.exports = s =>
-    s.split(/\r?\n/)
+module.exports = input =>
+    input.split(/\r?\n/)
         .map(passphrase => passphrase.split(' ')
             .map(word => word.split('').sort().join(''))
         )

@@ -1,7 +1,6 @@
-const captcha = require('./day01-part1');
-const captcha2 = require('./day01-part2');
+const captcha = require('./day/1/part1');
+const captcha2 = require('./day/1/part2');
 
-// http://adventofcode.com/2017/day/1
 describe('day 1: Inverse Captcha', () => {
     describe('part 1', () => {
         test('test input', () => {

@@ -1,7 +1,6 @@
-const passphrase = require('./day04-part1');
-const passphrase2 = require('./day04-part2');
+const passphrase = require('./day/4/part1');
+const passphrase2 = require('./day/4/part2');
 
-// https://adventofcode.com/2017/day/4
 describe('day 4: High-Entropy Passphrases', () => {
     describe('part 1', () => {
         test('test input', () => {
@@ -10,6 +9,7 @@ describe('day 4: High-Entropy Passphrases', () => {
             expect(passphrase('aa bb cc dd aaa')).toBe(1);
         });
     });
+
     describe('part 2', () => {
         test('test input', () => {
             expect(passphrase2('abcde fghij')).toBe(1);

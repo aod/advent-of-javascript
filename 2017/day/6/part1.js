@@ -38,9 +38,8 @@ class Area {
     }
 }
 
-module.exports = s => {
-    const area = new Area(s.split(/\t/).map(Number));
-
+module.exports = input => {
+    const area = new Area(input.split(/\t/).map(Number));
 
     while (area.loopDetected === undefined) {
         area.distribute();

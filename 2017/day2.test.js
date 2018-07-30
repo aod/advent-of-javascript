@@ -1,9 +1,8 @@
-const checksum = require('./day02-part1');
-const checksum2 = require('./day02-part2');
+const checksum = require('./day/2/part1');
+const checksum2 = require('./day/2/part2');
 
 const prepData = (...values) => values.join('\n');
 
-// http://adventofcode.com/2017/day/2
 describe('day 2: Corruption Checksum', () => {
     describe('part 1', () => {
         test('test input', () => {

@@ -6,7 +6,7 @@ class Score {
     }
 }
 
-module.exports = s => {
+module.exports = input => {
     let grid = [
         new Score(0, 0, 1)
     ];
@@ -60,7 +60,7 @@ module.exports = s => {
         grid.push(current);
 
         highest = current;
-    } while (s >= highest.value);
+    } while (input >= highest.value);
 
     return highest.value;
 }

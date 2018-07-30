@@ -1,7 +1,7 @@
-module.exports = s => {
+module.exports = input => {
     let result = 0;
 
-    const parsed = s.split(/\r?\n/)
+    const parsed = input.split(/\r?\n/)
         .map(row => row.split(/[ \t]+/)
             .map(Number)
             .sort((a, b) => a - b)

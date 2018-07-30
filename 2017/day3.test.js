@@ -1,7 +1,6 @@
-const spiralMemory = require('./day03-part1');
-const spiralMemory2 = require('./day03-part2');
+const spiralMemory = require('./day/3/part1');
+const spiralMemory2 = require('./day/3/part2');
 
-// http://adventofcode.com/2017/day/3
 describe('day 3: Spiral Memory', () => {
     describe('part 1', () => {
         test('test input', () => {
