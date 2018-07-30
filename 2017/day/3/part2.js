@@ -1,10 +1,4 @@
-class Score {
-    constructor(x, y, value) {
-        this.x = x;
-        this.y = y;
-        this.value = value;
-    }
-}
+const Score = require('./lib/Score');
 
 module.exports = input => {
     let grid = [
