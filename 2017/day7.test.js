@@ -1,4 +1,5 @@
 const part1 = require('./day/7/part1');
+const part2 = require('./day/7/part2');
 
 describe('day 7: Recursive Circus', () => {
     const testInput =
@@ -18,5 +19,9 @@ cntj (57)`;
 
     test('part 1', () => {
         expect(part1(testInput)).toBe('tknk');
+    });
+
+    test('part 2', () => {
+        expect(part2(testInput)).toBe(60);
     });
 });
