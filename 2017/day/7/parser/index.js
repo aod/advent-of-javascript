@@ -1,4 +1,4 @@
-const pegjs = require('pegjs');
+const pegjs = require('pegjs')
 
 const grammar = `
     Program = Expression*
@@ -19,8 +19,8 @@ const grammar = `
     String = s:[a-z]+ { return s.join('') }
     Eol = "\\r"? "\\n"
     _ = " "
-`;
+`
 
-const parser = pegjs.generate(grammar);
+const parser = pegjs.generate(grammar)
 
-module.exports = parser;
+module.exports = parser

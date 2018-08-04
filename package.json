@@ -1,11 +1,13 @@
 {
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write **/*.js"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
     "@types/yargs": "^11.1.0",
-    "jest": "^23.3.0"
+    "jest": "^23.3.0",
+    "prettier": "1.14.0"
   },
   "dependencies": {
     "pegjs": "^0.10.0",
@@ -13,5 +15,10 @@
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
   }
 }

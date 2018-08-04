@@ -1,5 +1,5 @@
 module.exports = input =>
-    input.split(/\r?\n/)
+    input
+        .split(/\r?\n/)
         .map(passphrase => passphrase.split(' '))
-        .filter(words => words.length - new Set(words).size === 0)
-        .length;
+        .filter(words => words.length - new Set(words).size === 0).length
