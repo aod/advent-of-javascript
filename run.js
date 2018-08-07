@@ -25,10 +25,10 @@ const { year, day, part, input } = require('yargs').options({
     }
 }).argv
 
-const puzzle = require(resolve(__dirname, `${year}/day/${day}/part${part}.js`))
+const puzzle = require(resolve(__dirname, `${year}/day${day}/part${part}.js`))
 const puzzleInput = input
     ? input
-    : readFileSync(resolve(__dirname, `${year}/day/${day}/input`), {
+    : readFileSync(resolve(__dirname, `${year}/day${day}/input`), {
           encoding: 'UTF-8'
       })
 const answer = puzzle(puzzleInput)

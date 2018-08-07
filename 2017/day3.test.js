@@ -1,5 +1,5 @@
-const part1 = require('./day/3/part1')
-const part2 = require('./day/3/part2')
+const part1 = require('./day3/part1')
+const part2 = require('./day3/part2')
 
 describe('day 3: Spiral Memory', () => {
     test('part 1', () => {

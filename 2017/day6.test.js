@@ -1,5 +1,5 @@
-const part1 = require('./day/6/part1')
-const part2 = require('./day/6/part2')
+const part1 = require('./day6/part1')
+const part2 = require('./day6/part2')
 
 describe('day 6: Memory Reallocation', () => {
     const testInput = [0, 2, 7, 0].join('\t')

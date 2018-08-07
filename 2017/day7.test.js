@@ -1,5 +1,5 @@
-const part1 = require('./day/7/part1')
-const part2 = require('./day/7/part2')
+const part1 = require('./day7/part1')
+const part2 = require('./day7/part2')
 
 describe('day 7: Recursive Circus', () => {
     const testInput = `pbga (66)

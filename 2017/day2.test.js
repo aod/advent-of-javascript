@@ -1,5 +1,5 @@
-const part1 = require('./day/2/part1')
-const part2 = require('./day/2/part2')
+const part1 = require('./day2/part1')
+const part2 = require('./day2/part2')
 
 const prepData = (...values) => values.join('\n')
 

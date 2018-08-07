@@ -1,5 +1,5 @@
-const part1 = require('./day/1/part1')
-const part2 = require('./day/1/part2')
+const part1 = require('./day1/part1')
+const part2 = require('./day1/part2')
 
 describe('day 1: Inverse Captcha', () => {
     test('part 1', () => {

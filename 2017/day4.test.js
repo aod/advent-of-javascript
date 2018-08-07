@@ -1,5 +1,5 @@
-const part1 = require('./day/4/part1')
-const part2 = require('./day/4/part2')
+const part1 = require('./day4/part1')
+const part2 = require('./day4/part2')
 
 describe('day 4: High-Entropy Passphrases', () => {
     test('part 1', () => {
