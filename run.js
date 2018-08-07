@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
+const { readFileSync } = require('fs')
+const { resolve } = require('path')
 
-const argv = require('yargs').options({
+const { year, day, part, input } = require('yargs').options({
     year: {
         alias: 'y',
         type: 'number',
@@ -25,19 +25,12 @@ const argv = require('yargs').options({
     }
 }).argv
 
-const file = path.resolve(
-    __dirname,
-    `${argv.year}/day/${argv.day}/part${argv.part}.js`
-)
+const puzzle = require(resolve(__dirname, `${year}/day/${day}/part${part}.js`))
+const puzzleInput = input
+    ? input
+    : readFileSync(resolve(__dirname, `${year}/day/${day}/input`), {
+          encoding: 'UTF-8'
+      })
+const answer = puzzle(puzzleInput)
 
-if (fs.existsSync(file)) {
-    const puzzle = require(file)
-    let input = argv.input
-        ? argv.input
-        : fs.readFileSync(
-              path.resolve(__dirname, `${argv.year}/day/${argv.day}/input`),
-              { encoding: 'UTF-8' }
-          )
-
-    console.log(puzzle(input))
-}
+console.log(`[${year}] D${day}-P${part} -> ${answer}`)
