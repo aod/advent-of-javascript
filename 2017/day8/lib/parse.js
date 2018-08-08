@@ -1,9 +1,8 @@
-const parser = require('../parser')
+const parser = require('./parser')
 
-const parse = input => {
+module.exports = (input, callback = () => {}) => {
     const parsed = parser.parse(input)
     const registers = {}
-    let highest = 0
 
     for (const { register } of parsed) {
         if (!registers[register]) {
@@ -53,12 +52,8 @@ const parse = input => {
                 break
         }
 
-        if (registers[register] > highest) {
-            highest = registers[register]
-        }
+        callback('afterInstruction', { value: registers[register] })
     }
 
-    return { registers, highest }
+    return { registers }
 }
-
-module.exports = { parse }

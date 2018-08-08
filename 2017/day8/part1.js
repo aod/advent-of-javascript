@@ -1,9 +1,3 @@
-const { parse } = require('./lib')
+const parse = require('./lib/parse')
 
-module.exports = input => {
-    const { registers } = parse(input)
-    return Object.keys(registers)
-        .map(register => registers[register])
-        .sort()
-        .reverse()[0]
-}
+module.exports = input => Math.max(...Object.values(parse(input).registers))
