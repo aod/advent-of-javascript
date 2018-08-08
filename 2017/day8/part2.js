@@ -1,5 +1,1 @@
-const { parse } = require('./lib')
-
-module.exports = input => {
-    return parse(input).highest
-}
+module.exports = input => require('./lib').parse(input).highest
