@@ -1,7 +1,7 @@
 const parse = require('./lib/parse')
 
 module.exports = input => {
-    highest = 0
+    let highest = 0
 
     parse(input, (event, { value }) => {
         if (event === 'afterInstruction') {
