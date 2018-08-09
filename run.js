@@ -16,8 +16,7 @@ const { year, day, part, input } = require('yargs').options({
     },
     part: {
         alias: 'p',
-        type: 'number',
-        default: 1
+        type: 'number'
     },
     input: {
         alias: 'i',
@@ -25,7 +24,7 @@ const { year, day, part, input } = require('yargs').options({
     }
 }).argv
 
-const puzzle = require(resolve(__dirname, `${year}/day${day}/part${part}.js`))
+const puzzle = require(`./${year}/day${day}/`)
 const puzzleInput = input
     ? input
     : readFileSync(resolve(__dirname, `${year}/day${day}/input`), {
@@ -33,4 +32,9 @@ const puzzleInput = input
       })
 const answer = puzzle(puzzleInput)
 
-console.log(`[${year}] D${day}-P${part} -> ${answer}`)
+console.log(`AOC[${year}]:`)
+console.log(
+    !part
+        ? answer.map((v, i) => `D${day} P${i + 1} -> ${v}`).join('\n')
+        : `D${day} P${part} -> ${answer[part - 1]}`
+)

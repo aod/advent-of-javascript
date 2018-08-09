@@ -1,6 +1,8 @@
-const parser = require('./parser')
+const Process = require('../../lib/Process')
 
-module.exports = (input, callback = () => {}) => {
+const parser = require('./lib/parser')
+
+const parse = function(input) {
     const parsed = parser.parse(input)
     const registers = {}
 
@@ -52,8 +54,21 @@ module.exports = (input, callback = () => {}) => {
                 break
         }
 
-        callback('afterInstruction', { value: registers[register] })
+        this.fire('afterInstruction', registers[register])
     }
 
-    return { registers }
+    this.fire('done', registers)
+}
+
+module.exports = input => {
+    const output = new Process(parse)
+        .on('done', function(registers) {
+            this.highestValue = Math.max(...Object.values(registers))
+        })
+        .on('afterInstruction', function(value) {
+            this.highestDelta = Math.max(value, this.highestDelta || 0)
+        })
+        .start(input)
+
+    return [output.highestValue, output.highestDelta]
 }
