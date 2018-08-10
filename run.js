@@ -30,7 +30,7 @@ const puzzleInput = input
     : readFileSync(resolve(__dirname, `${year}/day${day}/input`), {
           encoding: 'UTF-8'
       })
-const answer = puzzle(puzzleInput)
+const answer = puzzle(puzzleInput) || []
 
 console.log(`AOC[${year}]:`)
 console.log(
