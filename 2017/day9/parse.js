@@ -1,6 +1,6 @@
 const Process = require('../../lib/Process')
 
-const parse = function(input) {
+module.exports = function(input) {
     let level = 0
     let garbage = false
 
@@ -33,20 +33,4 @@ const parse = function(input) {
                 break
         }
     }
-}
-
-module.exports = input => {
-    const { score, garbageCount } = new Process(parse, {
-        score: 0,
-        garbageCount: 0
-    })
-        .on('groupClosed', function(score) {
-            this.score += score
-        })
-        .on('garbage', function(char) {
-            this.garbageCount++
-        })
-        .start(input)
-
-    return [score, garbageCount]
 }

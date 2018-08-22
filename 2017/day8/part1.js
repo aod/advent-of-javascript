@@ -1,7 +1,8 @@
-const puzzle = require('./puzzle')
+const Process = require('../../lib/Process')
+const parse = require('./parse')
 
 module.exports = input => {
-    const output = puzzle()
+    const output = new Process(parse)
         .on('done', function(registers) {
             this.highestValue = Math.max(...Object.values(registers))
         })

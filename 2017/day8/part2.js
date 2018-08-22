@@ -1,9 +1,10 @@
-const puzzle = require('./puzzle')
+const Process = require('../../lib/Process')
+const parse = require('./parse')
 
 module.exports = input => {
-    const output = puzzle()
+    const output = new Process(parse, { highestDelta: 0 })
         .on('afterInstruction', function(value) {
-            this.highestDelta = Math.max(value, this.highestDelta || 0)
+            this.highestDelta = Math.max(value, this.highestDelta)
         })
         .start(input)
 
