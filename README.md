@@ -1,7 +1,7 @@
 # adventofcode
 Personal coding challenge solutions - http://adventofcode.com/
 
-## 2017 status (42% done)
+## 2017 status (44% done)
 | Day | Part 1 | Part 2 |
 |-----|:------:|:------:|
 | 25  |        |        |
@@ -18,7 +18,7 @@ Personal coding challenge solutions - http://adventofcode.com/
 | 14  |        |        |
 | 13  |        |        |
 | 12  |        |        |
-| 11  | x      |        |
+| 11  | x      | x      |
 | 10  | x      | x      |
 | 9   | x      | x      |
 | 8   | x      | x      |
