@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 const { readFileSync } = require('fs')
-const { resolve } = require('path')
 
-const { year, day, part, input } = require('yargs').options({
+const { year, day, part } = require('yargs').options({
     year: {
         alias: 'y',
         type: 'number',
@@ -11,30 +10,21 @@ const { year, day, part, input } = require('yargs').options({
     },
     day: {
         alias: 'd',
-        type: 'number',
+        type: 'string',
         demandOption: true
     },
     part: {
         alias: 'p',
-        type: 'number'
-    },
-    input: {
-        alias: 'i',
-        type: 'string'
+        type: 'number',
+        demandOption: true
     }
 }).argv
 
-const puzzle = require(`./${year}/day${day}/`)
-const puzzleInput = input
-    ? input
-    : readFileSync(resolve(__dirname, `${year}/day${day}/input`), {
-          encoding: 'UTF-8'
-      })
-const answer = puzzle(puzzleInput) || []
+const pathToDay = `./${year}/day${day.padStart(2, '0')}`
 
-console.log(`AOC[${year}]:`)
-console.log(
-    !part
-        ? answer.map((v, i) => `D${day} P${i + 1} -> ${v}`).join('\n')
-        : `D${day} P${part} -> ${answer[part - 1]}`
-)
+const puzzle = require(`${pathToDay}/part${part}`)
+const puzzleInput = readFileSync(`${pathToDay}/input`, {
+    encoding: 'UTF-8'
+})
+
+console.log(puzzle(puzzleInput))
