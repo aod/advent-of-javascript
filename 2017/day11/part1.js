@@ -4,7 +4,7 @@ const directions = {
     se: [1, -0.5],
     s: [0, -1],
     sw: [-1, -0.5],
-    nw: [-1, 0.5],
+    nw: [-1, 0.5]
 }
 
 module.exports = input => {

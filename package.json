@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "jest",
-    "prettier": "prettier --write **/*.js"
+    "prettier": "prettier --write '**/*.js'"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
