@@ -55,7 +55,7 @@ for (const [year, days] of solutions) {
 
             const average = totalTimeInMs / testsPerSolution
 
-            console.log(`${part} ${average.toFixed(2)}ms`)
+            console.log(`${part} ${average.toFixed(3)}ms`)
         }
 
         console.groupEnd()
