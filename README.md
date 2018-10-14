@@ -1,6 +1,21 @@
 # adventofcode
 Personal coding challenge solutions - http://adventofcode.com/
 
+Benchmark every solution
+```
+npm run benchmark
+```
+
+Test every solution with Jest
+```
+npm test
+```
+
+Format js files
+```
+npm run prettier
+```
+
 ## AOC Status
 | Day | 2015 | 2016 | 2017 (48%) |
 |-----|:----:|:----:|:----------:|
