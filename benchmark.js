@@ -2,7 +2,9 @@ const glob = require('glob')
 const path = require('path')
 const fs = require('fs')
 
+/** @type {Map<string, Map<string, Map<key, Function|string>>>} */
 const solutions = new Map()
+const testsPerSolution = 10
 
 for (const yearDir of glob.sync('20*/')) {
     const year = path.basename(yearDir)
@@ -40,13 +42,20 @@ for (const [year, days] of solutions) {
 
         for (const [part, solution] of parts.get('solutions')) {
             const solve = solution.bind(null, input)
+            let totalTimeInMs = 0
 
-            const start = process.hrtime()
-            solve()
-            const diff = process.hrtime(start)
-            const ms = diff[0] * 1e3 + diff[1] / 1e6
+            for (let i = 0; i < testsPerSolution; i++) {
+                const start = process.hrtime()
+                solve()
+                const diff = process.hrtime(start)
 
-            console.log(`solved ${part} in ${ms.toFixed(2)}ms`)
+                const ms = diff[0] * 1e3 + diff[1] / 1e6
+                totalTimeInMs += ms
+            }
+
+            const average = totalTimeInMs / testsPerSolution
+
+            console.log(`${part} ${average.toFixed(2)}ms`)
         }
 
         console.groupEnd()
