@@ -1,7 +1,7 @@
 # adventofcode
 Personal coding challenge solutions - http://adventofcode.com/
 
-## 2017 status (46% done)
+## AOC Status
 | Day | 2015 | 2016 | 2017 (46%) |
 |-----|:----:|:----:|:----------:|
 | 25  |      |      |            |
