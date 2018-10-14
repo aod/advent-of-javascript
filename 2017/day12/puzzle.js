@@ -1,6 +1,6 @@
 /**
  * @param {string} input
- * @returns {Map<String, Number[]>}
+ * @returns {Map<number, number[]>}
  */
 const parseInput = input => {
     const parsedInput = new Map()
@@ -20,7 +20,7 @@ const parseInput = input => {
 }
 
 /**
- * @param {Map<String, Number[]>} programs
+ * @param {Map<string, number[]>} programs
  * @param {number} program
  * @returns {Set<number>}
  */
