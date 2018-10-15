@@ -1,6 +1,27 @@
 const glob = require('glob')
 const path = require('path')
 const fs = require('fs')
+const stream = require('table').createStream({
+    columnDefault: {
+        width: 10
+    },
+    columnCount: 4,
+    columns: {
+        0: {
+            width: 4
+        },
+        1: {
+            width: 3
+        },
+        2: {
+            width: 7
+        },
+        3: {
+            width: 9
+        }
+    }
+})
+stream.write(['Year', 'Day', 'Part', 'Time (ms)'])
 
 /** @type {Map<string, Map<string, Map<key, Function|string>>>} */
 const solutions = new Map()
@@ -33,11 +54,10 @@ for (const yearDir of glob.sync('20*/')) {
 }
 
 for (const [year, days] of solutions) {
-    console.group(year)
+    let solutionsTested = 0
+    let totalMs = 0
 
     for (const [day, parts] of days) {
-        console.group(day)
-
         const input = parts.get('input')
 
         for (const [part, solution] of parts.get('solutions')) {
@@ -53,13 +73,21 @@ for (const [year, days] of solutions) {
                 totalTimeInMs += ms
             }
 
+            solutionsTested++
             const average = totalTimeInMs / testsPerSolution
+            totalMs += average
 
-            console.log(`${part} ${average.toFixed(3)}ms`)
+            stream.write([
+                year,
+                parseInt(day.slice(-2, day.length)),
+                part.slice(-1, part.length),
+                average.toFixed(3)
+            ])
         }
-
-        console.groupEnd()
     }
 
-    console.groupEnd()
+    stream.write(['', '', 'Total', totalMs.toFixed(3)])
+    stream.write(['', '', 'Average', (totalMs / solutionsTested).toFixed(3)])
 }
+
+console.log('\n')
