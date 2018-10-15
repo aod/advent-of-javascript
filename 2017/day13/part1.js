@@ -1,4 +1,4 @@
-const { computeLayerRangePositions, parseInput } = require('.')
+const { parseInput } = require('.')
 
 /**
  * @param {string} input
@@ -8,29 +8,16 @@ module.exports = input => {
     /**
      * @type {Object<number, Array<number>>}
      */
-    const computedFirewall = {}
-
-    const firewallKeys = Object.keys(firewall)
-    for (let i = 0; i < firewallKeys.length; i++) {
-        const depth = parseInt(firewallKeys[i])
-        const range = parseInt(firewall[depth])
-
-        computedFirewall[depth] = computeLayerRangePositions(range, depth + 1)
-    }
 
     let severity = 0
-    const maxDepth = parseInt(Object.keys(firewall).slice(-1)[0])
 
-    for (let depth = 0; depth <= maxDepth; depth++) {
-        const layer = computedFirewall[depth]
+    for (let i = 0; i < firewall.length; i++) {
+        const depth = firewall[i][0]
+        const range = firewall[i][1]
+        // const [depth, range] = firewall[i]
+        const caught = (depth + 1) % (range * 2 - 1) === 0
 
-        if (!layer) {
-            continue
-        }
-
-        const range = firewall[depth]
-
-        if (layer[depth] === 1) {
+        if (caught) {
             severity += depth * range
         }
     }

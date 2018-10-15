@@ -25,7 +25,7 @@ stream.write(['Year', 'Day', 'Part', 'Time (ms)'])
 
 /** @type {Map<string, Map<string, Map<key, Function|string>>>} */
 const solutions = new Map()
-const testsPerSolution = 10
+const testsPerSolution = 25
 
 for (const yearDir of glob.sync('20*/')) {
     const year = path.basename(yearDir)
