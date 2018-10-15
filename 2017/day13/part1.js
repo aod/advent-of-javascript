@@ -1,22 +1,10 @@
+const { computeLayerRangePositions, parseInput } = require('.')
+
 /**
  * @param {string} input
  */
 module.exports = input => {
-    /**
-     * @type {Object<number, number|undefined>}
-     */
-    const firewall = {}
-
-    for (let i = 0, lines = input.split('\n'); i < lines.length; i++) {
-        const line = lines[i]
-
-        const seperatorIndex = line.indexOf(':')
-        const depth = parseInt(line.slice(0, seperatorIndex))
-        const range = parseInt(line.slice(seperatorIndex + 1, line.length))
-
-        firewall[depth] = range
-    }
-
+    const firewall = parseInput(input)
     /**
      * @type {Object<number, Array<number>>}
      */
@@ -27,25 +15,7 @@ module.exports = input => {
         const depth = parseInt(firewallKeys[i])
         const range = parseInt(firewall[depth])
 
-        const everyPicosecondPos = [1]
-
-        for (
-            let picosecond = 1, scannerDelta = 1;
-            picosecond < depth + 2;
-            picosecond++
-        ) {
-            const pos = everyPicosecondPos[picosecond - 1] + scannerDelta
-
-            if (pos >= range) {
-                scannerDelta = -1
-            } else if (pos <= 1) {
-                scannerDelta = 1
-            }
-
-            everyPicosecondPos[picosecond] = pos
-        }
-
-        computedFirewall[depth] = everyPicosecondPos
+        computedFirewall[depth] = computeLayerRangePositions(range, depth + 1)
     }
 
     let severity = 0
