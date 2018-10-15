@@ -16,8 +16,6 @@ module.exports = input => {
         const range = firewall[i][1]
         const caught = depth % (range * 2 - 2) === 0
 
-        console.log(caught)
-
         if (caught) {
             severity += depth * range
         }
