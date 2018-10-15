@@ -5,10 +5,6 @@ const { parseInput } = require('.')
  */
 module.exports = input => {
     const firewall = parseInput(input)
-    /**
-     * @type {Object<number, Array<number>>}
-     */
-
     let severity = 0
 
     for (let i = 0; i < firewall.length; i++) {
