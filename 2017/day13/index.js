@@ -30,6 +30,7 @@ exports.parseInput = input => {
  *
  * @param {Range} range
  * @param {Picosecond} delay Picoseconds
+ * @returns {number[]}
  */
 exports.computeLayerRangePositions = (range, delay) => {
     const everyPicosecondRangePosition = [1]
