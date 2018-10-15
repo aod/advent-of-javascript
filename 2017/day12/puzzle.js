@@ -20,7 +20,7 @@ const parseInput = input => {
 }
 
 /**
- * @param {Map<string, number[]>} programs
+ * @param {Map<number, number[]>} programs
  * @param {number} program
  * @returns {Set<number>}
  */
