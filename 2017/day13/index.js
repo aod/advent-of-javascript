@@ -1,8 +1,13 @@
-/** @typedef {number} Picosecond */
+/**
+ * @typedef {number} Picosecond
+ * @typedef {number} Depth
+ * @typedef {number} Range
+ * @typedef {string} AOCInput
+ */
 
 /**
- * @param {string} input
- * @returns {Object<number, number|undefined>}
+ * @param {AOCInput} input
+ * @returns {Object<Depth, Range>}
  */
 exports.parseInput = input => {
     const firewall = {}
@@ -23,7 +28,7 @@ exports.parseInput = input => {
 /**
  * Computes every possbile range-position of a layer after a delay of x picoseconds
  *
- * @param {number} range
+ * @param {Range} range
  * @param {Picosecond} delay Picoseconds
  */
 exports.computeLayerRangePositions = (range, delay) => {
