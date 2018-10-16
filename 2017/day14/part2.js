@@ -46,19 +46,17 @@ module.exports = input => {
 
     /**
      * @param {Map<string, Coord>} squares
-     * @param {Array<Coord>} surrounding
+     * @param {Set<Coord>} surrounding
      */
     function squareRegion(squares, surrounding) {
-        if (!surrounding.length) {
+        if (surrounding.size < 1) {
             return
         }
 
-        /** @type {Array<Coord>} */
-        const newSurrounding = []
+        /** @type {Set<Coord>} */
+        const newSurrounding = new Set()
 
-        for (let i = 0; i < surrounding.length; i++) {
-            const surroundingSquare = surrounding[i]
-
+        for (const surroundingSquare of surrounding) {
             const surrounders = [
                 [surroundingSquare.x - 1, surroundingSquare.y],
                 [surroundingSquare.x + 1, surroundingSquare.y],
@@ -79,24 +77,23 @@ module.exports = input => {
                     continue
                 }
 
-                newSurrounding.push(squares.get(`${x}${y}`))
+                // console.log('addes square to new surrounding')
+                newSurrounding.add(squares.get(`${x}${y}`))
             }
         }
 
-        console.log(newSurrounding)
-
-        for (let i = 0; i < surrounding.length; i++) {
-            const { x, y } = surrounding[i]
+        for (const { x, y } of surrounding) {
             squares.delete(`${x}${y}`)
         }
+
+        // console.log('newSurrounding size', newSurrounding.size)
 
         squareRegion(squares, newSurrounding)
     }
 
     while (squares.size > 0) {
-        const square = squares.values().next().value
-        squareRegion(squares, [square])
-        console.log(squares.size, answer)
+        squareRegion(squares, new Set([squares.values().next().value]))
+        // console.log(squares.size, answer)
         answer++
     }
 
