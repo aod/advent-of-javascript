@@ -5,6 +5,62 @@
 const { hashBits } = require('.')
 
 /**
+ *
+ * @param {Coord} square
+ */
+function squareIndex({ x, y }) {
+    return x + y * 128
+}
+
+/**
+ * @param {Map<string, Coord>} squares
+ * @param {Coord[][]} grid
+ * @param {Set<Coord>} surrounding
+ * @param {*} surrounding
+ */
+function squareRegion(squares, grid, surrounding) {
+    if (!surrounding.size) {
+        return
+    }
+
+    /** @type {Set<Coord>} */
+    const newSurrounding = new Set()
+
+    for (const surroundingSquare of surrounding) {
+        squares.delete(squareIndex(surroundingSquare))
+
+        const surrounders = [
+            [surroundingSquare.x - 1, surroundingSquare.y],
+            [surroundingSquare.x + 1, surroundingSquare.y],
+            [surroundingSquare.x, surroundingSquare.y + 1],
+            [surroundingSquare.x, surroundingSquare.y - 1]
+        ]
+
+        for (const [x, y] of surrounders) {
+            const outsideGridY = y < 0 || y > 127
+            const outsideGridX = x < 0 || x > 127
+
+            if (
+                outsideGridX ||
+                outsideGridY ||
+                grid[y][x] === 0 ||
+                !squares.has(squareIndex({ x, y }))
+            ) {
+                continue
+            }
+
+            if (x < 0 || y < 0 || x > 127 || y > 127) {
+                console.log(x, y)
+            }
+
+            newSurrounding.add(squares.get(squareIndex({ x, y })))
+        }
+    }
+
+    squareRegion(squares, grid, newSurrounding)
+}
+
+/**
  * @param {string} input
  */
 module.exports = input => {
@@ -31,69 +87,26 @@ module.exports = input => {
      */
     let answer = 0
 
-    // Fill the grid
     for (let y = 0; y < columns; y++) {
         const bits = hashBits(`${input}-${y}`)
 
+        // let line = ''
         for (let x = 0; x < bits.length; x++) {
             if (bits[x] === 1) {
-                squares.set(`${x}${y}`, { x, y })
+                const square = { x, y }
+                squares.set(squareIndex(square), square)
+                // line += '#'
+            } else {
+                // line += '.'
             }
 
             grid.push(bits)
         }
     }
 
-    /**
-     * @param {Map<string, Coord>} squares
-     * @param {Set<Coord>} surrounding
-     */
-    function squareRegion(squares, surrounding) {
-        if (surrounding.size < 1) {
-            return
-        }
-
-        /** @type {Set<Coord>} */
-        const newSurrounding = new Set()
-
-        for (const surroundingSquare of surrounding) {
-            const surrounders = [
-                [surroundingSquare.x - 1, surroundingSquare.y],
-                [surroundingSquare.x + 1, surroundingSquare.y],
-                [surroundingSquare.x, surroundingSquare.y + 1],
-                [surroundingSquare.x, surroundingSquare.y - 1]
-            ]
-
-            for (const [x, y] of surrounders) {
-                const outsideGridY = y < 0 || y > grid.length
-                const outsideGridX = x < 0 || x > grid[0].length
-
-                if (
-                    outsideGridX ||
-                    outsideGridY ||
-                    grid[y][x] === 0 ||
-                    !squares.has(`${x}${y}`)
-                ) {
-                    continue
-                }
-
-                // console.log('addes square to new surrounding')
-                newSurrounding.add(squares.get(`${x}${y}`))
-            }
-        }
-
-        for (const { x, y } of surrounding) {
-            squares.delete(`${x}${y}`)
-        }
-
-        // console.log('newSurrounding size', newSurrounding.size)
-
-        squareRegion(squares, newSurrounding)
-    }
-
     while (squares.size > 0) {
-        squareRegion(squares, new Set([squares.values().next().value]))
-        // console.log(squares.size, answer)
+        const square = squares.values().next().value
+        squareRegion(squares, grid, new Set([square]))
         answer++
     }
 
