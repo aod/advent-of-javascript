@@ -5,18 +5,25 @@
 const { hashBits } = require('.')
 
 /**
+ * Grid size (128x128 grid)
+ *
+ * @type {number}
+ */
+const size = 128
+
+/**
  *
  * @param {Coord} square
  */
 function squareIndex({ x, y }) {
-    return x + y * 128
+    return x + y * size
 }
 
 /**
  * @param {Map<string, Coord>} squares
  * @param {Coord[][]} grid
  * @param {Set<Coord>} surrounding
- * @param {*} surrounding
+ * @returns {void}
  */
 function squareRegion(squares, grid, surrounding) {
     if (!surrounding.size) {
@@ -37,8 +44,8 @@ function squareRegion(squares, grid, surrounding) {
         ]
 
         for (const [x, y] of surrounders) {
-            const outsideGridY = y < 0 || y > 127
-            const outsideGridX = x < 0 || x > 127
+            const outsideGridY = y < 0 || y >= size
+            const outsideGridX = x < 0 || x >= size
 
             if (
                 outsideGridX ||
@@ -47,10 +54,6 @@ function squareRegion(squares, grid, surrounding) {
                 !squares.has(squareIndex({ x, y }))
             ) {
                 continue
-            }
-
-            if (x < 0 || y < 0 || x > 127 || y > 127) {
-                console.log(x, y)
             }
 
             newSurrounding.add(squares.get(squareIndex({ x, y })))
@@ -64,13 +67,6 @@ function squareRegion(squares, grid, surrounding) {
  * @param {string} input
  */
 module.exports = input => {
-    /**
-     * Max columns
-     * 0-127 columns in the 128x128 grid
-     *
-     * @type {number}
-     */
-    const columns = 128
     /**
      * @type {Map<string, Coord>}
      */
@@ -87,20 +83,15 @@ module.exports = input => {
      */
     let answer = 0
 
-    for (let y = 0; y < columns; y++) {
+    for (let y = 0; y < size; y++) {
         const bits = hashBits(`${input}-${y}`)
+        grid.push(bits)
 
-        // let line = ''
         for (let x = 0; x < bits.length; x++) {
             if (bits[x] === 1) {
                 const square = { x, y }
                 squares.set(squareIndex(square), square)
-                // line += '#'
-            } else {
-                // line += '.'
             }
-
-            grid.push(bits)
         }
     }
 
