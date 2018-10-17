@@ -27,4 +27,9 @@ const puzzleInput = readFileSync(`${pathToDay}/input`, {
     encoding: 'UTF-8'
 })
 
+const start = process.hrtime()
 console.log(puzzle(puzzleInput))
+const diff = process.hrtime(start)
+
+const ms = diff[0] * 1e3 + diff[1] / 1e6
+console.log(`Finished in ${ms.toFixed(3)}ms`)
