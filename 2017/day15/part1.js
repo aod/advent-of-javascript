@@ -8,8 +8,6 @@ const MAX_PAIRS = 4e7
  * @param {string} input
  */
 module.exports = input => {
-    console.log(process.memoryUsage())
-
     const { a: startA, b: startB } = parse(input)
     const generatorA = createGenerator(FACTOR_A, DIV_VALUE, startA)
     const generatorB = createGenerator(FACTOR_B, DIV_VALUE, startB)
@@ -25,10 +23,8 @@ module.exports = input => {
 
         if (a === b) {
             answer++
-            console.log(process.memoryUsage())
         }
     }
 
-    console.log(process.memoryUsage())
     return answer
 }
