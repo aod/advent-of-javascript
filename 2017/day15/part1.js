@@ -18,8 +18,8 @@ module.exports = input => {
     while (totalPairs > 0) {
         totalPairs -= 1
 
-        const a = generatorA.next().value.toString(2).slice(-16)
-        const b = generatorB.next().value.toString(2).slice(-16)
+        const a = generatorA.next().value & 65535
+        const b = generatorB.next().value & 65535
 
         if (a === b) {
             answer++

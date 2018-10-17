@@ -29,8 +29,8 @@ module.exports = input => {
             b = generatorB.next().value
         }
 
-        a = a.toString(2).slice(-16)
-        b = b.toString(2).slice(-16)
+        a &= 65535
+        b &= 65535
 
         if (a === b) {
             answer++

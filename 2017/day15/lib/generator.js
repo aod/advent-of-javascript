@@ -6,11 +6,11 @@
  * @param {number} divideValue
  * @param {number} startValue
  */
-function* createGenerator (factor, divideValue, startValue) {
+function* createGenerator(factor, divideValue, startValue) {
     let previousValue = startValue
 
     while (true) {
-        yield previousValue = (previousValue * factor) % divideValue
+        yield (previousValue = (previousValue * factor) % divideValue)
     }
 }
 
