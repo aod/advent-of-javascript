@@ -1,35 +1,7 @@
-const swap = (arr, [a, b]) => {
-    ;[arr[a], arr[b]] = [arr[b], arr[a]]
-}
+const { createPrograms, dance } = require('./lib/programs')
 
 /**
  * @param {string} input
  */
-module.exports = (input, programsAmount = 16) => {
-    let programs = []
-
-    for (let i = 0; i < programsAmount; i++) {
-        programs[i] = String.fromCharCode(97 + i)
-    }
-
-    const danceMoves = input.split(',')
-
-    for (let i = 0; i < danceMoves.length; i++) {
-        const danceMove = danceMoves[i].slice(1)
-        const action = danceMoves[i][0]
-
-        if (action === 's') {
-            const moveAmount = parseInt(danceMove, 10)
-            if (moveAmount < programsAmount) {
-                const sliced = programs.splice(programs.length - moveAmount)
-                programs = sliced.concat(programs)
-            }
-        } else if (action === 'x') {
-            swap(programs, danceMove.split('/').map(Number))
-        } else if (action === 'p') {
-            swap(programs, danceMove.split('/').map(p => programs.indexOf(p)))
-        }
-    }
-
-    return programs.join('')
-}
+module.exports = (input, programsAmount = 16) =>
+    dance(createPrograms(programsAmount), input.split(',')).join('')
