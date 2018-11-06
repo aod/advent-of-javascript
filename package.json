@@ -22,9 +22,9 @@
     "lib": "lib"
   },
   "scripts": {
+    "benchmark": "node benchmark.js",
     "test": "jest",
-    "prettier": "prettier --write '**/*.js'",
-    "benchmark": "node benchmark.js"
+    "prettier": "prettier --write \"**/*.js\""
   },
   "prettier": {
     "semi": false,
@@ -44,6 +44,6 @@
     "@types/jest": "^23.1.4",
     "@types/yargs": "^11.1.0",
     "jest": "^23.3.0",
-    "prettier": "1.14.0"
+    "prettier": "^1.14.0"
   }
 }
