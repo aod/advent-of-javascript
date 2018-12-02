@@ -47,7 +47,7 @@ Day | 2015 | 2016 | 2017 | 2018
 5  | | | [⭐][aoc_solution_2017_5_1] [⭐][aoc_solution_2017_5_2] |
 4  | | | [⭐][aoc_solution_2017_4_1] [⭐][aoc_solution_2017_4_2] |
 3  | | | [⭐][aoc_solution_2017_3_1] [⭐][aoc_solution_2017_3_2] |
-2  | | | [⭐][aoc_solution_2017_2_1] [⭐][aoc_solution_2017_2_2] |
+2  | | | [⭐][aoc_solution_2017_2_1] [⭐][aoc_solution_2017_2_2] | [⭐][aoc_solution_2018_2_1] [⭐][aoc_solution_2018_2_2]
 1  | | | [⭐][aoc_solution_2017_1_1] [⭐][aoc_solution_2017_1_2] | [⭐][aoc_solution_2018_1_1] [⭐][aoc_solution_2018_1_2]
 
 [aoc]: https://adventofcode.com/
