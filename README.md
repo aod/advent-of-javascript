@@ -22,33 +22,37 @@ npm run prettier
 
 # Status
 
-Day | 2015 | 2016 | 2017 | 2018
-:---: | :--- | :--- | :--- | :--- |
-25 | | | |
-24 | | | |
-23 | | | |
-22 | | | |
-21 | | | |
-20 | | | |
-19 | | | |
-18 | | | |
-17 | | | [⭐][aoc_solution_2017_17_1] |
-16 | | | [⭐][aoc_solution_2017_16_1] [⭐][aoc_solution_2017_16_2] |
-15 | | | [⭐][aoc_solution_2017_15_1] [⭐][aoc_solution_2017_15_2] |
-14 | | | [⭐][aoc_solution_2017_14_1] [⭐][aoc_solution_2017_14_2] |
-13 | | | [⭐][aoc_solution_2017_13_1] [⭐][aoc_solution_2017_13_2] |
-12 | | | [⭐][aoc_solution_2017_12_1] [⭐][aoc_solution_2017_12_2] |
-11 | | | [⭐][aoc_solution_2017_11_1] [⭐][aoc_solution_2017_11_2] |
-10 | | | [⭐][aoc_solution_2017_10_1] [⭐][aoc_solution_2017_10_2] |
-9  | | | [⭐][aoc_solution_2017_9_1] [⭐][aoc_solution_2017_9_2] |
-8  | | | [⭐][aoc_solution_2017_8_1] [⭐][aoc_solution_2017_8_2] |
-7  | | | [⭐][aoc_solution_2017_7_1] [⭐][aoc_solution_2017_7_2] |
-6  | | | [⭐][aoc_solution_2017_6_1] [⭐][aoc_solution_2017_6_2] |
-5  | | | [⭐][aoc_solution_2017_5_1] [⭐][aoc_solution_2017_5_2] |
-4  | | | [⭐][aoc_solution_2017_4_1] [⭐][aoc_solution_2017_4_2] |
-3  | | | [⭐][aoc_solution_2017_3_1] [⭐][aoc_solution_2017_3_2] | [⭐][aoc_solution_2018_3_1]
-2  | | | [⭐][aoc_solution_2017_2_1] [⭐][aoc_solution_2017_2_2] | [⭐][aoc_solution_2018_2_1] [⭐][aoc_solution_2018_2_2]
-1  | | | [⭐][aoc_solution_2017_1_1] [⭐][aoc_solution_2017_1_2] | [⭐][aoc_solution_2018_1_1] [⭐][aoc_solution_2018_1_2]
+Note: some challenges are done in another language which are located in different repositories.
+
+Click [here](https://github.com/aoktayd/adventofcode#overview-of-my-advent-of-code-solutions) for a total overview.
+
+Day | 2017 | 2018
+:--:| :--- | :---
+25 | |
+24 | |
+23 | |
+22 | |
+21 | |
+20 | |
+19 | |
+18 | |
+17 | [⭐][aoc_solution_2017_17_1] |
+16 | [⭐][aoc_solution_2017_16_1] [⭐][aoc_solution_2017_16_2] |
+15 | [⭐][aoc_solution_2017_15_1] [⭐][aoc_solution_2017_15_2] |
+14 | [⭐][aoc_solution_2017_14_1] [⭐][aoc_solution_2017_14_2] |
+13 | [⭐][aoc_solution_2017_13_1] [⭐][aoc_solution_2017_13_2] |
+12 | [⭐][aoc_solution_2017_12_1] [⭐][aoc_solution_2017_12_2] |
+11 | [⭐][aoc_solution_2017_11_1] [⭐][aoc_solution_2017_11_2] |
+10 | [⭐][aoc_solution_2017_10_1] [⭐][aoc_solution_2017_10_2] |
+9  | [⭐][aoc_solution_2017_9_1] [⭐][aoc_solution_2017_9_2] |
+8  | [⭐][aoc_solution_2017_8_1] [⭐][aoc_solution_2017_8_2] |
+7  | [⭐][aoc_solution_2017_7_1] [⭐][aoc_solution_2017_7_2] | [⭐][aoc_solution_2018_7_1]
+6  | [⭐][aoc_solution_2017_6_1] [⭐][aoc_solution_2017_6_2] |
+5  | [⭐][aoc_solution_2017_5_1] [⭐][aoc_solution_2017_5_2] |
+4  | [⭐][aoc_solution_2017_4_1] [⭐][aoc_solution_2017_4_2] |
+3  | [⭐][aoc_solution_2017_3_1] [⭐][aoc_solution_2017_3_2] | [⭐][aoc_solution_2018_3_1]
+2  | [⭐][aoc_solution_2017_2_1] [⭐][aoc_solution_2017_2_2] | [⭐][aoc_solution_2018_2_1] [⭐][aoc_solution_2018_2_2]
+1  | [⭐][aoc_solution_2017_1_1] [⭐][aoc_solution_2017_1_2] | [⭐][aoc_solution_2018_1_1] [⭐][aoc_solution_2018_1_2]
 
 [aoc]: https://adventofcode.com/
 [aoc_solution_2015_1_1]: ./2015/day01/part1.js
