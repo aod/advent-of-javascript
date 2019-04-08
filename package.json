@@ -43,7 +43,7 @@
   "devDependencies": {
     "@types/jest": "^23.1.4",
     "@types/yargs": "^11.1.0",
-    "jest": "^23.3.0",
+    "jest": "^24.7.1",
     "prettier": "^1.14.0"
   }
 }
