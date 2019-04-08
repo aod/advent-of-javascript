@@ -24,7 +24,7 @@ npm run prettier
 
 Note: some challenges are done in another language which are located in different repositories.
 
-Click [here](https://github.com/aoktayd/adventofcode#overview-of-my-advent-of-code-solutions) for a total overview.
+Click [here](https://github.com/aoktayd/adventofcode#overview) for a total overview.
 
 Day | 2017 | 2018
 :--:| :--- | :---
