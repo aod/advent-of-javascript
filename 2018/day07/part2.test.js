@@ -14,7 +14,7 @@ Step F must be finished before step E can begin.`
     expect(part2(testInput, 2, 0)).toBe(15)
 })
 
-xit('should equal the answer for day 7 part 2', () => {
+it('should equal the answer for day 7 part 2', () => {
     const input = readFileSync(`${__dirname}/input`, { encoding: 'UTF-8' })
-    expect(part2(input)).toBe('')
+    expect(part2(input)).toBe(893)
 })
