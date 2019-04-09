@@ -1,23 +1,20 @@
-Personal coding challenge solutions for [Advent of Code][aoc]
+Welcome to my Advent of Code solutions repository written in JavaScript.
 
-# NPM Scripts
-
-Benchmark every solution
-
-```
-npm run benchmark
-```
-
-Run test files
-
+# Scripts
+Runs test files
 ```
 npm test
 ```
 
-Format code
-
+Formats code
 ```
 npm run prettier
+```
+
+# Tools
+Runs a solution
+```
+node run tools/run.js [-v] [[,...year].[,...day].[,...part]] [repeat]
 ```
 
 # Status
