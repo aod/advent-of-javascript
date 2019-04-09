@@ -46,7 +46,7 @@ Day | 2017 | 2018
 10 | [⭐][aoc_solution_2017_10_1] [⭐][aoc_solution_2017_10_2] |
 9  | [⭐][aoc_solution_2017_9_1] [⭐][aoc_solution_2017_9_2] |
 8  | [⭐][aoc_solution_2017_8_1] [⭐][aoc_solution_2017_8_2] |
-7  | [⭐][aoc_solution_2017_7_1] [⭐][aoc_solution_2017_7_2] | [⭐][aoc_solution_2018_7_1]
+7  | [⭐][aoc_solution_2017_7_1] [⭐][aoc_solution_2017_7_2] | [⭐][aoc_solution_2018_7_1] [⭐][aoc_solution_2018_7_2]
 6  | [⭐][aoc_solution_2017_6_1] [⭐][aoc_solution_2017_6_2] |
 5  | [⭐][aoc_solution_2017_5_1] [⭐][aoc_solution_2017_5_2] |
 4  | [⭐][aoc_solution_2017_4_1] [⭐][aoc_solution_2017_4_2] |
