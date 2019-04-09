@@ -44,7 +44,12 @@ function run(year, day, part) {
 
     if (!fs.existsSync(solutionPath)) {
         if (verbose) {
-            console.warn('\x1b[31m%s\x1b[0m', `❌  0ms${' '.repeat(7)} ${solutionId} => Unable to resolve, file doesn't exist.`)
+            console.warn(
+                '\x1b[31m%s\x1b[0m',
+                `❌  0ms${' '.repeat(
+                    7
+                )} ${solutionId} => Unable to resolve, file doesn't exist.`
+            )
         }
         return
     }
@@ -63,7 +68,9 @@ function run(year, day, part) {
     const diff = process.hrtime(start)
     const diffInMs = diff[0] * 1e3 + diff[1] / 1e6
 
-    const ms = ((diffInMs / maxRepeatAmount).toFixed(3) + 'ms').replace('.', ',').padEnd(10, ' ')
+    const ms = ((diffInMs / maxRepeatAmount).toFixed(3) + 'ms')
+        .replace('.', ',')
+        .padEnd(10, ' ')
 
     console.log(`✅  ${ms} ${solutionId} => ${output}`)
 }
