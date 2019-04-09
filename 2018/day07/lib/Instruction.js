@@ -49,6 +49,14 @@ module.exports = class Instruction {
         return currentStep
     }
 
+    get size() {
+        return [...this.steps.values()].reduce(
+            (acc, cur) =>
+                acc + (cur.previous.length > 0 || cur.next.length > 0 ? 1 : 0),
+            0
+        )
+    }
+
     previousStepsDone(step) {
         for (const s of step.previous) {
             if (!this.steps.get(s).done) {
@@ -67,6 +75,12 @@ module.exports = class Instruction {
         currentStep.done = true
         this.order += currentStep.letter
         this.currentSteps.delete(currentStep.letter)
-        currentStep.next.forEach(this.currentSteps.add.bind(this.currentSteps))
+        this.addNextSteps(...currentStep.next)
+    }
+
+    addNextSteps(...stepLetters) {
+        for (const stepLetter of stepLetters) {
+            this.currentSteps.add(stepLetter)
+        }
     }
 }
