@@ -14,7 +14,7 @@ npm run prettier
 # Tools
 Runs a solution
 ```
-node tools/run.js [-v] [[,...year].[,...day].[,...part]] [repeat]
+node tools/run.js [-v] {[,...year].[,...day].[,...part]} [repeat]
 ```
 
 # Status
