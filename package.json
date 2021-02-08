@@ -8,11 +8,11 @@
     "codingchallenges",
     "javascript"
   ],
-  "homepage": "https://github.com/aoktayd/adventofcode-javascript#readme",
+  "homepage": "https://github.com/aod/advent-of-javascript#readme",
   "bugs": {
-    "url": "https://github.com/aoktayd/adventofcode-javascript/issues"
+    "url": "https://github.com/aod/advent-of-javascript/issues"
   },
-  "repository": "github:aoktayd/adventofcode-javascript",
+  "repository": "github:aod/advent-of-javascript",
   "license": "Unlicense",
   "author": "Oktay Dinler",
   "directories": {
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "pegjs": "^0.10.0",
-    "aoc-runner": "github:aoktayd/adventofcode-runner"
+    "aoc-runner": "github:aod/aoc-runner.js"
   },
   "devDependencies": {
     "prettier": "^1.16.4",
