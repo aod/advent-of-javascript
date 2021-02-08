@@ -3,7 +3,7 @@ const parse = require('./parse')
 
 module.exports = input => {
     const { score } = new Process(parse, {
-        score: 0
+        score: 0,
     })
         .on('groupClosed', function(score) {
             this.score += score

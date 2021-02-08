@@ -51,5 +51,5 @@ const groupFromProgram = (programs, program) => {
 
 module.exports = {
     parseInput,
-    groupFromProgram
+    groupFromProgram,
 }
