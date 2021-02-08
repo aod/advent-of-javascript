@@ -25,18 +25,21 @@
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "tabWidth": 4
+    "tabWidth": 4,
+    "trailingComma": "es5"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/20.*/day00.*.js"
+    ]
   },
   "dependencies": {
-    "aoc-runner": "github:aoktayd/adventofcode-runner",
-    "jest": "^24.7.1",
     "pegjs": "^0.10.0",
-    "prettier": "^1.16.4"
+    "aoc-runner": "github:aoktayd/adventofcode-runner"
   },
   "devDependencies": {
-    "@types/node": "^11.13.2"
+    "prettier": "^1.16.4",
+    "jest": "^24.7.1"
   }
 }

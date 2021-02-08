@@ -14,7 +14,7 @@ module.exports = (input, length = 255) => {
             list,
             lengths,
             position,
-            skipSize
+            skipSize,
         })
         list = output.list
         position = output.position

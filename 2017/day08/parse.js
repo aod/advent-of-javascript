@@ -15,7 +15,7 @@ module.exports = function(input) {
         register,
         instruction,
         value,
-        eval: [eRegister, eOperator, eValue]
+        eval: [eRegister, eOperator, eValue],
     } of parsed) {
         let passed = false
 

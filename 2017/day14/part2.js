@@ -40,7 +40,7 @@ function squareRegion(squares, grid, surrounding) {
             [surroundingSquare.x - 1, surroundingSquare.y],
             [surroundingSquare.x + 1, surroundingSquare.y],
             [surroundingSquare.x, surroundingSquare.y + 1],
-            [surroundingSquare.x, surroundingSquare.y - 1]
+            [surroundingSquare.x, surroundingSquare.y - 1],
         ]
 
         for (const [x, y] of surrounders) {

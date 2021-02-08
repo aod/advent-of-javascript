@@ -5,7 +5,7 @@ module.exports = (input, length = 255) => {
         list: createArray(length),
         lengths: input.split(',').map(Number),
         position: 0,
-        skipSize: 0
+        skipSize: 0,
     })
 
     return list[0] * list[1]

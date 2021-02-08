@@ -3,7 +3,7 @@ const parse = require('./parse')
 
 module.exports = input => {
     const { garbageCount } = new Process(parse, {
-        garbageCount: 0
+        garbageCount: 0,
     })
         .on('garbage', function(char) {
             this.garbageCount++

@@ -8,7 +8,7 @@ it('should pass the test input from day 2 part 1', () => {
         'abcccd',
         'aabcdd',
         'abcdee',
-        'ababab'
+        'ababab',
     ].join('\n')
 
     expect(part1(testInput)).toBe(12)

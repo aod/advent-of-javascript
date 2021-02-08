@@ -5,7 +5,7 @@ const reverseByLength = ({ list, start, length }) => {
 
     let part = {
         ranges: [],
-        values: []
+        values: [],
     }
 
     let tmpLength = length
@@ -34,7 +34,7 @@ const knot = ({ list, lengths, position, skipSize }) => {
         listCopy = reverseByLength({
             list: listCopy,
             start: positionCopy,
-            length
+            length,
         })
 
         // Move the current position forward by that length plus the skip size.
