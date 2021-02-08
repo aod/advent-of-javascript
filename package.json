@@ -39,7 +39,6 @@
     "aoc-runner": "github:aoktayd/adventofcode-runner"
   },
   "devDependencies": {
-    "@types/node": "^11.13.2",
     "prettier": "^1.16.4",
     "jest": "^24.7.1"
   }
