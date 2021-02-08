@@ -15,7 +15,7 @@ describe('Day 00 - Advent of Code 2019', () => {
         xdescribe('Puzzle answer', () => {
             it('Should return the correct answer when given the actual input', () => {
                 expect(
-                    part1(readFileSync('2019/input/day00.txt', 'utf-8'))
+                    part1(readFileSync(__dirname + '/input', 'utf-8'))
                 ).toBe(undefined)
             })
         })
@@ -34,7 +34,7 @@ describe('Day 00 - Advent of Code 2019', () => {
         xdescribe('Puzzle answer', () => {
             it('Should return the correct answer when given the actual input', () => {
                 expect(
-                    part2(readFileSync('2019/input/day00.txt', 'utf-8'))
+                    part2(readFileSync(__dirname + '/input', 'utf-8'))
                 ).toBe(undefined)
             })
         })

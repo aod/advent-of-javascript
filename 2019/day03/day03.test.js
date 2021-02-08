@@ -1,5 +1,7 @@
 const { readFileSync } = require('fs')
-const { part1, part2, makeWireIterator } = require('./day03')
+const { makeWireIterator } = require('./lib');
+const part1 = require('./part1')
+const part2 = require('./part2')
 
 describe('Day 3 - Advent of Code 2019', () => {
     test('makeWireIterator', () => {
@@ -22,7 +24,7 @@ describe('Day 3 - Advent of Code 2019', () => {
         })
 
         test('Answer', () => {
-            expect(part1(readFileSync('2019/input/day03.txt', 'utf-8'))).toBe(
+            expect(part1(readFileSync(__dirname + '/input', 'utf-8'))).toBe(
                 1337
             )
         })
@@ -44,7 +46,7 @@ describe('Day 3 - Advent of Code 2019', () => {
         })
 
         test('Answer', () => {
-            expect(part2(readFileSync('2019/input/day03.txt', 'utf-8'))).toBe(
+            expect(part2(readFileSync(__dirname + '/input', 'utf-8'))).toBe(
                 65356
             )
         })

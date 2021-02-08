@@ -1,6 +1,6 @@
-const { exec, readAt } = require('./shared/intcode')
+const { exec, readAt } = require('../shared/intcode')
 
-module.exports.part1 = input => {
+module.exports = input => {
     let program = exec({
         intcode: input.split(',').map(Number),
         input: 1,
@@ -11,8 +11,4 @@ module.exports.part1 = input => {
     }
 
     return program.output
-}
-
-module.exports.part2 = input => {
-    return exec({ intcode: input.split(',').map(Number), input: 5 }).output
 }

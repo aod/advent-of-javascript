@@ -1,5 +1,7 @@
 const { readFileSync } = require('fs')
-const { part1, part2, perm } = require('./day07')
+const { perm } = require('./lib')
+const part1 = require('./part1')
+const part2 = require('./part2')
 
 describe('Day 7 - Advent of Code 2019', () => {
     describe('Permutations', () => {
@@ -32,7 +34,7 @@ describe('Day 7 - Advent of Code 2019', () => {
         describe('Puzzle answer', () => {
             it('Should return the correct answer when given the actual input', () => {
                 expect(
-                    part1(readFileSync('2019/input/day07.txt', 'utf-8'))
+                    part1(readFileSync(__dirname + '/input', 'utf-8'))
                 ).toBe(277328)
             })
         })
@@ -57,7 +59,7 @@ describe('Day 7 - Advent of Code 2019', () => {
         describe('Puzzle answer', () => {
             it('Should return the correct answer when given the actual input', () => {
                 expect(
-                    part2(readFileSync('2019/input/day07.txt', 'utf-8'))
+                    part2(readFileSync(__dirname + '/input', 'utf-8'))
                 ).toBe(11304734)
             })
         })
