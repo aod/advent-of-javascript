@@ -1,5 +1,5 @@
 const { readFileSync } = require('fs')
-const { makeWireIterator } = require('./lib');
+const { makeWireIterator } = require('./lib')
 const part1 = require('./part1')
 const part2 = require('./part2')
 

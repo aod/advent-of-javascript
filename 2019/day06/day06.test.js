@@ -55,9 +55,7 @@ describe('Day 6 - Advent of Code 2019', () => {
         })
 
         test('answer', () => {
-            expect(part2(readFileSync(__dirname + '/input', 'utf-8'))).toBe(
-                337
-            )
+            expect(part2(readFileSync(__dirname + '/input', 'utf-8'))).toBe(337)
         })
     })
 })

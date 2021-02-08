@@ -1,5 +1,5 @@
 const { exec, readAt } = require('../shared/intcode')
-const { perm } = require('./lib');
+const { perm } = require('./lib')
 
 module.exports = input => {
     const intcode = input.split(',').map(Number)

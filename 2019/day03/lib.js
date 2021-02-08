@@ -5,7 +5,10 @@ const WireDirections = {
     L: pos => pos.x--,
 }
 
-module.exports.makeWireIterator = function* (coords, directionsMap = WireDirections) {
+module.exports.makeWireIterator = function*(
+    coords,
+    directionsMap = WireDirections
+) {
     const pos = { x: 0, y: 0 }
     let steps = 0
 

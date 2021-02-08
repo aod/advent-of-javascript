@@ -1,4 +1,3 @@
-
 module.exports = (input, width = 25, height = 6) => {
     input = input.split('').map(Number)
 
